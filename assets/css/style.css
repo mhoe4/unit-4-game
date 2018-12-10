@@ -1,0 +1,32 @@
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+}
+.jumbotron {
+  background-image: url("../images/header-background.jpg");
+  width:50%;
+  margin-left: 25%;
+  /* padding: 0px;
+  padding-top: 10px;
+  padding-bottom: 1px; */
+}
+
+h1 {
+  color: turquoise;
+  display:inline-block;
+  border-radius: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  padding: 5px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.my-sound-btn {
+  background-color: green;
+}
+
+.gem {
+  background-color: white;
+}
