@@ -1,14 +1,12 @@
 body {
   background-image: url("../images/background.jpg");
   background-size: cover;
+  font-family: 'Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif';
 }
 .jumbotron {
   background-image: url("../images/header-background.jpg");
-  width:50%;
-  margin-left: 25%;
-  /* padding: 0px;
-  padding-top: 10px;
-  padding-bottom: 1px; */
+  height: 20%;
+  padding: 25px;
 }
 
 h1 {
@@ -27,6 +25,17 @@ h1 {
   background-color: green;
 }
 
+#music-controls {
+  margin-top: 10px;
+}
+
+/* .my-gems {
+  margin-top: 20px;
+  margin-bottom: 20px;
+} */
+
 .gem {
-  background-color: white;
+  width: 150px;
+  height: 150px;
+  margin: 30px;
 }
