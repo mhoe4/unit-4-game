@@ -22,8 +22,14 @@ h1 {
   border-width: 1px;
 }
 
-#game-controls {
+#my-buttons {
   margin-top: 10px;
+}
+
+#game-info {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
 .gem {
@@ -32,20 +38,49 @@ h1 {
   margin: 30px;
 }
 
-
 .my-text {
   font-weight: bolder;
   font-size: 32px;
 }
 
 .my-target-number {
-  background-image: url("../images/target.jpg");
+  background-color: rgb(116,141,249);
+  width: 50%;
+  margin-left:50%;
 }
 
 .my-win-loss {
-  background-image: url("../images/win.jpg");
+  background-color: rgb(254,67,51);
+  width: 60%;
 }
 
 .my-user-score {
   background-color: rgb(232,163,12);
+  margin-left: 12.5%;
+  width: 75%;
+}
+
+p {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .my-target-number {
+    background-color: rgb(116,141,249);
+    width: 50%;
+    margin-left:25%;
+  }
+
+  .my-win-loss {
+    background-color: rgb(254,67,51);
+    width: 60%;
+    margin-left:20%;
+  }
+
+  .gem {
+    width: 75px;
+    height: 75px;
+    margin: 15px;
+  }
 }
