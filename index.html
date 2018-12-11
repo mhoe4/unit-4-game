@@ -17,6 +17,9 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
 
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.3/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.3/dist/jquery.fancybox.min.js"></script>
   </head>
 
   <body>
@@ -24,17 +27,17 @@
     <!-- Overall Bootstrap Grid -->
     <div class="container">
 
-      <!-- Jumbotron with Title -->
-      <div class="jumbotron text-center ">
+      <div class="text-center">
         <h1 class="text-center">
           <strong>Crystal Collector</strong>
         </h1>
       </div>
+
       <div class="row">
 
         <div class="col-md-4 ">
 
-          <div class="card mt-2">
+          <div class="card mt-2 my-target-number">
             <div class="card-body">
               <h5 class="card-title text-center my-text" id="target-number"></h5>
             </div>
@@ -42,20 +45,21 @@
 
         </div>
 
-        <div class="col-md-4 ">
+        <div id="game-controls" class="col-md-4 text-center">
 
-          <div id="music-controls" class="text-center">
-            <button class="btn btn-xs my-sound-btn">
-              <span class="fa fa-music"></span> Game Play Sound On</button>
-          </div>
+          <button class="btn btn-xs " id="game-info">
+            <span class="fa fa-info"></span> Game Info</button>
+          <br>
+          <button class="btn btn-xs my-sound-btn">
+            <span class="fa fa-music"></span> Game Play Sound On</button>
 
         </div>
 
         <div class="col-md-4 ">
 
-          <div class="card mt-2">
+          <div class="card mt-2 my-win-loss">
             <div class="card-body">
-              <h6 class="card-subtitle mb-2 text-muted text-center my-text" id="win-loss"><div id="wins"></div><div id="losses"></div></h6>
+              <h6 class="card-subtitle mb-2 text-center my-text" id="win-loss"><div id="wins"></div><div id="losses"></div></h6>
             </div>
           </div>
 
@@ -88,10 +92,10 @@
 
         <div class="col-md-4 ">
 
-          <div class="card mt-2">
+          <div class="card mt-2 my-user-score">
             <h5 class="card-header text-center">Your Score</h4>
             <div class="card-body">
-              <h6 class="card-subtitle mb-2 text-muted text-center my-text" id="user-score"></h6>
+              <h6 class="card-subtitle mb-2 text-center my-text" id="user-score"></h6>
             </div>
           </div>
 
