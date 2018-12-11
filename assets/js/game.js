@@ -1,5 +1,13 @@
+var wins = 0;
+var losses = 0;
+var targetNumber = Math.floor(Math.random() * 102) + 19;
+var gemValues = generateGemValues();
+var userScore = 0;
+
 // JavaScript function that wraps everything
 $(document).ready(function() {
+
+  newGame();
 
   // Gets Link for Game sound
   //var audioElement = document.createElement("audio");
@@ -19,85 +27,45 @@ $(document).ready(function() {
   
 
 
-
-  // Theme Button
-  $(".theme-button").on("click", function() {
-    audioElement.play();
-  });
-  $(".pause-button").on("click", function() {
-    audioElement.pause();
-  });
-
-  // Size Buttons
-  $(".normal-button").on("click", function() {
-    captainPlanet.animate({ height: "300px" });
-  });
-  $(".grow-button").on("click", function() {
-    captainPlanet.animate({ height: "500px" });
-  });
-  $(".shrink-button").on("click", function() {
-    captainPlanet.animate({ height: "100px" });
-  });
-
-  // Visibility Buttons
-  $(".vis-button").on("click", function() {
-    captainPlanet.animate({ opacity: "1" });
-  });
-  $(".invis-button").on("click", function() {
-    captainPlanet.animate({ opacity: "0.05" });
-  });
-
-  // Stretch Buttons
-  $(".stretch-btn").on("click", function() {
-    captainPlanet.animate({ height: "1000px", width: "200px" });
-  });
-  $(".unstretch-btn").on("click", function() {
-    captainPlanet.animate({ height: "300px", width: "450px" });
-  });
-
-  // Move Buttons
-  $(".up-button").on("click", function() {
-    captainPlanet.animate({ top: "-=200px" }, "normal");
-  });
-  $(".down-button").on("click", function() {
-    captainPlanet.animate({ top: "+=200px" }, "normal");
-  });
-  $(".left-button").on("click", function() {
-    captainPlanet.animate({ left: "-=200px" }, "normal");
-  });
-  $(".right-button").on("click", function() {
-    captainPlanet.animate({ left: "+=200px" }, "normal");
-  });
-  $(".back-button").on("click", function() {
-    captainPlanet.animate({ top: "50px", left: "80px" }, "fast");
-  });
-
-  // Keyboard move controls
-  $(document).keyup(function(e) {
-    switch (e.which) {
-
-    // Move Buttons (Keyboard Down)
-    case 40:
-      captainPlanet.animate({ top: "+=200px" }, "normal");
-      break;
-
-      // Move Buttons (Keyboard Right)
-    case 39:
-      captainPlanet.animate({ left: "+=200px" }, "normal");
-      break;
-
-      // Move Buttons (Keyboard Up)
-    case 38:
-      captainPlanet.animate({ top: "-=200px" }, "normal");
-      break;
-
-      // Move Buttons (Keyboard Left)
-    case 37:
-      captainPlanet.animate({ left: "-=200px" }, "normal");
-      break;
-
-    default:
-      break;
-    }
-  });
 });
+
+$(".gem").on("click", function() {
+
+  var gemValue = ($(this).attr("value"));
+  gemValue = parseInt(gemValue);
+
+  userScore += gemValue;
+  $("#user-score").html(userScore);
+
+  if (userScore === targetNumber) {
+    wins++;
+    newGame();
+  } else if (userScore > targetNumber) {
+    losses++;
+    newGame();
+  }
+});
+
+function generateGemValues(){
+  var values = [];
+  for (var i = 0; i < 4; i++) {
+    values.push(Math.floor(Math.random() * 12) + 1);
+  }
+  return values;
+}
+
+function newGame() {
+  targetNumber = Math.floor(Math.random() * 102) + 19;
+  gemValues = generateGemValues();
+  userScore = 0;
+  $("#target-number").html(targetNumber);
+  $("#wins").html("Wins: " + wins);
+  $("#losses").html("Losses: " + losses);
+
+  $("#gem1").attr("value", gemValues[0]);
+  $("#gem2").attr("value", gemValues[1]);
+  $("#gem3").attr("value", gemValues[2]);
+  $("#gem4").attr("value", gemValues[3]);
+
+  $("#user-score").html(userScore);
+}
