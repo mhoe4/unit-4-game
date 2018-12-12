@@ -21,10 +21,10 @@ $(document).ready(function() {
   $(".my-sound-btn").on("click", function() {
     if ($(".my-sound-btn").text().includes("On") ) {
       $(".my-sound-btn").css('background-color', 'rgb(255,0,0)');
-      $(".my-sound-btn").html('<span class="fa fa-music"></span> Game Play Sound Off');
+      $(".my-sound-btn").html('<span class="fa fa-music"></span> Game Play Sound: Off');
     } else {
       $(".my-sound-btn").css('background-color', 'rgb(90, 255, 13)');
-      $(".my-sound-btn").html('<span class="fa fa-music"></span> Game Play Sound On');
+      $(".my-sound-btn").html('<span class="fa fa-music"></span> Game Play Sound: On');
     }
   });
 
