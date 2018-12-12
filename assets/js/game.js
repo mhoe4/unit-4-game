@@ -4,15 +4,18 @@ var targetNumber = Math.floor(Math.random() * 102) + 19;
 var gemValues = generateGemValues();
 var userScore = 0;
 
+// loads audio files
+var gem1sound = new Audio("assets/sounds/gem1sound.wav");
+var gem2Sound = new Audio("assets/sounds/gem2sound.wav");
+var gem3Sound = new Audio("assets/sounds/gem3sound.wav");
+var gem4Sound = new Audio("assets/sounds/gem4sound.wav");
+var winsound = new Audio("assets/sounds/raven.mp3");
+
 // JavaScript function that wraps everything
 $(document).ready(function() {
 
   newGame();
-
-  // Gets Link for Game sound
-  //var audioElement = document.createElement("audio");
-  //audioElement.setAttribute("src", "assets/captainplanet24.mp3");
-
+  
   // Theme Button
   $(".my-sound-btn").on("click", function() {
     if ($(".my-sound-btn").text().includes("On") ) {
@@ -45,7 +48,23 @@ $(".gem").on("click", function() {
   userScore += gemValue;
   $("#user-score").html(userScore);
 
+  switch ($(this).attr("id")) {
+    case "gem1":
+      gem1sound.play();
+      break;
+    case "gem2":
+      gem2sound.play();
+      break;
+    case "gem3":
+      gem3sound.play();
+      break;
+    case "gem4":
+      gem4sound.play();
+      break;
+  }
+
   if (userScore === targetNumber) {
+    winsound.play();
     wins++;
     newGame();
   } else if (userScore > targetNumber) {
