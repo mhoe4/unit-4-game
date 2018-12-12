@@ -6,10 +6,11 @@ var userScore = 0;
 
 // loads audio files
 var gem1sound = new Audio("assets/sounds/gem1sound.wav");
-var gem2Sound = new Audio("assets/sounds/gem2sound.wav");
-var gem3Sound = new Audio("assets/sounds/gem3sound.wav");
-var gem4Sound = new Audio("assets/sounds/gem4sound.wav");
-var winsound = new Audio("assets/sounds/raven.mp3");
+var gem2sound = new Audio("assets/sounds/gem2sound.wav");
+var gem3sound = new Audio("assets/sounds/gem3sound.wav");
+var gem4sound = new Audio("assets/sounds/gem4sound.wav");
+var winsound = new Audio("assets/sounds/win-sound.mp3");
+var losesound = new Audio("assets/sounds/lose-sound.wav");
 
 // JavaScript function that wraps everything
 $(document).ready(function() {
@@ -68,6 +69,7 @@ $(".gem").on("click", function() {
     wins++;
     newGame();
   } else if (userScore > targetNumber) {
+    losesound.play();
     losses++;
     newGame();
   }
