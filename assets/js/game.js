@@ -1,5 +1,6 @@
 // JavaScript function that wraps everything
 $(document).ready(function() {
+// Global Variables
   var wins = 0;
   var losses = 0;
   var targetNumber = Math.floor(Math.random() * 102) + 19;
@@ -13,12 +14,12 @@ $(document).ready(function() {
   var gem4sound = new Audio("assets/sounds/gem4sound.wav");
   var winsound = new Audio("assets/sounds/win-sound.mp3");
   var losesound = new Audio("assets/sounds/lose-sound.wav");
-
   var sound = true;
     
+  // Set up a new game with new target value/gem values, updated wins/losses, and reset user score
   newGame();
   
-  // Theme Button
+  // Turn sound on/off when the sound button is clicked and modify button's color (green/red)
   $("#my-sound-btn").on("click", function() {
     if ($("#my-sound-btn").text().includes("On") ) {
       $("#my-sound-btn").css('background-color', 'rgb(255,0,0)');
@@ -31,6 +32,7 @@ $(document).ready(function() {
     }
   });
 
+  // Display game instructions in fancy box when game info button is clicked
   $("#game-info").on("click", function() {
 
     $.fancybox.open('<div class="message text-center"><h2>How to Play!</h2>\
@@ -41,15 +43,19 @@ $(document).ready(function() {
     </div>');
   });
   
+  // Add value of the gem clicked to the user score, run click effects, check status of game
   $(".gem").on("click", function() {
     // $(this).effect( "bounce", {times:3}, 300 );
   
+    // Get gem value as integer
     var gemValue = ($(this).attr("value"));
     gemValue = parseInt(gemValue);
   
+    // Add gem value to user score and update html
     userScore += gemValue;
     $("#user-score").html(userScore);
   
+    // Play gem related sound
     switch ($(this).attr("id")) {
       case "gem1":
         if(sound) {
@@ -73,6 +79,7 @@ $(document).ready(function() {
         break;
     }
   
+    // Checkl if user score >= target and reset game if needed
     if (userScore === targetNumber) {
       if(sound) {
         winsound.play();
@@ -88,7 +95,7 @@ $(document).ready(function() {
     }
   });
   
-  // function 
+  // Creates an array of 4 random values to be applied to the crystals
   function generateGemValues(){
     var values = [];
     for (var i = 0; i < 4; i++) {
@@ -97,21 +104,23 @@ $(document).ready(function() {
     return values;
   }
   
-  //function to set up a new game
+  // Set up a new game with new target value/gem values, updated wins/losses, and reset user score
   function newGame() {
     targetNumber = Math.floor(Math.random() * 102) + 19;
     gemValues = generateGemValues();
     userScore = 0;
+
+    // Update visible Html
     $("#target-number").html(targetNumber);
     $("#wins").html("Wins: " + wins);
     $("#losses").html("Losses: " + losses);
+    $("#user-score").html(userScore);
   
+    // Set gem Values
     $("#gem1").attr("value", gemValues[0]);
     $("#gem2").attr("value", gemValues[1]);
     $("#gem3").attr("value", gemValues[2]);
     $("#gem4").attr("value", gemValues[3]);
-  
-    $("#user-score").html(userScore);
   }
 
 });
