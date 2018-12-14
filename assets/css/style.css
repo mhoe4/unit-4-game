@@ -14,7 +14,7 @@ h1 {
   -webkit-text-stroke-color: black;
 }
 
-.my-sound-btn {
+#my-sound-btn {
   background-color: rgb(90, 255, 13);
   margin-top: 10px;
   border-style: solid;
@@ -64,6 +64,7 @@ p {
   font-size: 20px;
 }
 
+/* Media query to shrink gems and center cards correctly when screen width shrinks */
 @media screen and (max-width: 768px) {
   
   .my-target-number {

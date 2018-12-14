@@ -21,4 +21,6 @@ When the user either wins or loses a game, a new target number is generated and 
 
 * Winning/losing triggers a unique sound.
 
+* Sounds may be toggled on and off with `Game Play Sound` button.
+
   

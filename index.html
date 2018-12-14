@@ -6,7 +6,6 @@
     <title>Crystal Collector</title>
     <link rel="shortcut icon" type="image/png" href="assets/images/Sapphire.png"/>
 
-
     <!-- Bootstrap File -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -34,14 +33,18 @@
     <!-- Overall Bootstrap Grid -->
     <div class="container">
 
+      <!-- Header -->
       <div class="text-center">
         <h1 class="text-center">
           <strong>Crystal Collector</strong>
         </h1>
       </div>
+      <!-- End Header -->
 
+      <!-- Top Row - Under Header -->
       <div class="row">
 
+        <!-- Target Number Card -->
         <div class="col-md-4 ">
 
           <div class="card mt-2 my-target-number">
@@ -51,17 +54,23 @@
           </div>
 
         </div>
+        <!-- End target number card -->
 
+        <!-- My Buttons Card -->
         <div id="my-buttons" class="col-md-4 text-center">
-
+          <!-- Game Info Button -->
           <button class="btn btn-xs" id="game-info">
             <span class="fa fa-info"></span> Game Info</button>
+          <!-- End Game Info Button -->
           <br>
-          <button class="btn btn-xs my-sound-btn">
+          <!-- Sound Button -->
+          <button class="btn btn-xs" id="my-sound-btn">
             <span class="fa fa-music"></span> Game Play Sound: On</button>
-
+          <!-- End Sound Button -->
         </div>
+        <!-- End buttons card -->
 
+        <!-- Win/Loss Card -->
         <div class="col-md-4 ">
 
           <div class="card mt-2 my-win-loss">
@@ -71,32 +80,37 @@
           </div>
 
         </div>
+        <!-- End Win/Loss Card -->
         
       </div>
+      <!-- End Top Row -->
 
+      <!-- Row of Crystals - Middle row -->
       <div class="row">
 
-        <div class="col-lg-12 text-center my-gems">
+        <div class="col-lg-12 text-center">
 
-          
-          <!-- Gems -->
+          <!-- Crystal Images -->
           <img src="assets/images/Amethyst.png" alt="gem1" id="gem1" class="gem">
           <img src="assets/images/Sapphire.png" alt="gem2" id="gem2" class="gem">
           <img src="assets/images/Swarovski crystal.png" alt="gem3" id="gem3" class="gem">
           <img src="assets/images/Gem.png" alt="gem4" id="gem4" class="gem">
+          <!-- End crystal images -->
 
         </div>
       
       </div>
+      <!-- End of crystals row - middle row -->
 
-      
+      <!-- Bottom Row -->
       <div class="row ">
 
+        <!-- Empty Card (to push User Score Card into the middle of the page) -->
         <div class="col-md-4 ">
+        </div>
+        <!-- End Empty Card -->
 
-  
-          </div>
-
+        <!-- User Score Card -->
         <div class="col-md-4 ">
 
           <div class="card mt-2 my-user-score ">
@@ -107,8 +121,11 @@
           </div>
 
         </div>
+        <!-- End User Score Card -->
       </div>
+      <!-- End Bottom Row -->
     </div>
+    <!-- End Overall Container -->
 
     <script type="text/javascript" src="assets/js/game.js"></script>
 
